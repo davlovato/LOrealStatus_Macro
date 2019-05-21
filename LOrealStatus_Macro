@@ -1,0 +1,78 @@
+Option Explicit
+
+Sub LorealStatus()
+
+'move column C in column A (Coding Task)
+
+Columns("C").Cut
+Columns("A").Insert
+
+'move col K in col B (Type)
+
+Columns("K").Cut
+Columns("B").Insert
+
+'move col L to col C (Platform)
+
+Columns("L").Cut
+Columns("C").Insert
+
+'move col M to col D (Marke)
+
+Columns("M").Cut
+Columns("D").Insert
+
+
+'move col AR to col E (Projekt Start - Programmierung)
+
+Columns("AR").Cut
+Columns("E").Insert
+
+'move col AS to col F (A-Test)
+
+Columns("AS").Cut
+Columns("F").Insert
+
+
+'move col AT to col G (C-Test)
+
+Columns("AT").Cut
+Columns("G").Insert
+
+'move col V to col H (Versanddatum)
+
+Columns("V").Cut
+Columns("H").Insert
+
+'move col AU to col I (Projekt Ende)
+
+Columns("AU").Cut
+Columns("I").Insert
+
+'move col AV to col J (Aufwand DEV)
+
+Columns("AV").Cut
+Columns("J").Insert
+
+'move col AW to col K (Aufwand TPM)
+
+Columns("AW").Cut
+Columns("K").Insert
+
+'move col BW to col L (DEV - name)
+
+Columns("BW").Cut
+Columns("L").Insert
+
+'remove all columns on the right side of col N
+
+Columns("M:AZ").Delete
+
+
+'add three rows on top
+
+'Columns("A").ColumnWidth = 80
+'Range("A1") = "ÜBERSICHT CODING TASKS - LOREAL"
+
+
+End Sub
