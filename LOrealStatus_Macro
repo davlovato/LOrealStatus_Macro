@@ -39,9 +39,9 @@ Columns("F").Insert
 Columns("AT").Cut
 Columns("G").Insert
 
-'move col V to col H (Versanddatum)
+'move col Y to col H (Versanddatum)
 
-Columns("V").Cut
+Columns("Y").Cut
 Columns("H").Insert
 
 'move col AU to col I (Projekt Ende)
@@ -64,15 +64,52 @@ Columns("K").Insert
 Columns("BW").Cut
 Columns("L").Insert
 
-'remove all columns on the right side of col N
+'remove all columns on the right side of col M
 
-Columns("M:AZ").Delete
+Range("M:CA").EntireColumn.Delete
+
+'not sure why, but the columns will only be deleted when I type in a second command to do that
+
+Range("M:Y").EntireColumn.Delete
 
 
 'add three rows on top
 
-'Columns("A").ColumnWidth = 80
-'Range("A1") = "ÜBERSICHT CODING TASKS - LOREAL"
+Rows(1).Insert Shift:=xlDown
+Rows(1).Insert Shift:=xlDown
+Rows(1).Insert Shift:=xlDown
+
+
+'regulate col size for each col
+
+Columns("A").ColumnWidth = 80
+Columns("C").ColumnWidth = 15
+Columns("E").ColumnWidth = 25
+Columns("H").ColumnWidth = 15
+Columns("I").ColumnWidth = 15
+Columns("J").ColumnWidth = 15
+Columns("K").ColumnWidth = 15
+Columns("L").ColumnWidth = 30
+
+
+Range("A1") = "ÜBERSICHT CODING TASKS - LOREAL"
+'Range("A1").Font.Bold = True
+Range("A1").Font.Size = 16
+Range("A1").Font.Name = "HeronSerif"
+
+
+'make headline row in bold
+Range("A4:L4").Font.Bold = True
+Range("A4:L4").RowHeight = 25
+Range("A4:L4").Interior.ColorIndex = 15
+Range("A4:L4").AutoFilter Field:=1
+
+
+
+'more formatting conditions (ask Vedran which ones he wants)
+'insert conditional formatting (or maybe you should do that at the beginning)
+
 
 
 End Sub
+
