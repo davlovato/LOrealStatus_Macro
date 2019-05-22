@@ -105,11 +105,20 @@ Range("A4:L4").Interior.ColorIndex = 15
 Range("A4:L4").AutoFilter Field:=1
 
 
+'changing the format of column H to Date
+'Columns("H").NumberFormat = "m/d/yy"
 
-'more formatting conditions (ask Vedran which ones he wants)
-'insert conditional formatting (or maybe you should do that at the beginning)
-
-
-
+Call formatnextweek
 End Sub
 
+'making cells red if the send-out deadline is this week
+
+Sub formatnextweek()
+Dim rg As Range
+Set rg = Range("H5", Range("h5").End(xlDown))
+Dim cf As FormatCondition
+Set cf = rg.FormatConditions.Add(Type:=xlTimePeriod, DateOperator:=xlThisWeek)
+cf.Interior.Color = rgbRed
+End Sub
+
+'and color the cells yellow when 4 or 5 days are left before the deadline
